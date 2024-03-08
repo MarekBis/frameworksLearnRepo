@@ -11,7 +11,7 @@
 <body>
 
     <header class="relative bg-[url('../public/img/bg-1.avif')] h-screen bg-cover bg-center">
-        <nav class="flex justify-between items-center bg-black sticky">
+        <nav class="flex justify-between items-center bg-black fixed w-full z-10">
             <div class="ml-8">
                 <img src="../public/img/logo-hp.png" alt="Logo HP" class="w-20">
             </div>
@@ -31,12 +31,12 @@
             </div>
         </nav>
         
-        <div class="mt-32 text-white text-center">
+        <div class="pt-36 text-white text-center">
             <h1 class="text-5xl">Philosophers stone</h1>
             <p class="text-xl">Lorem ipsum dolor sit amet consectetur.</p>
         </div>
         <div class="absolute w-[100%] bottom-20 flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-4">
-            <button class="uppercase bg-blue-600 w-60 text-white rounded-full h-10">order</button>
+            <button class=" uppercase bg-blue-600 w-60 text-white rounded-full h-10">order</button>
             <button class="mt-2 uppercase bg-blue-800 w-60 h-10 rounded-full text-white">More info</button>
         </div>
         <div class="text-white absolute bottom-5 w-[100%]">
@@ -46,5 +46,39 @@
           </div>
         
     </header>
+
+    <section class="relative bg-[url('../public/img/bg2.jpg')] h-screen bg-cover bg-center">
+        <div class="pt-32 text-white text-center">
+            <h1 class=" text-5xl">Chamber of Secrets</h1>
+            <p class="text-xl">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+        <div class="absolute w-[100%] bottom-20 flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-4">
+            <button class="uppercase bg-green-800 w-60 text-white rounded-full h-10">order</button>
+            <button class="mt-2 uppercase bg-green-950 w-60 h-10 rounded-full text-white">More info</button>
+        </div>
+        <div class="text-white absolute bottom-5 w-[100%]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 mx-auto animate-bounce">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
+          </svg>
+          </div>
+        
+        </section>
+
+        <section class="relative bg-[url('../public/img/bg-3.jpg')] h-screen bg-cover bg-center">
+            <div class="pt-32 text-white text-center">
+                <h1 class=" text-5xl">Prisoner of Azkaban</h1>
+                <p class="text-xl">Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="absolute w-[100%] bottom-20 flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-4">
+                <button class="uppercase bg-slate-500 w-60 text-white rounded-full h-10">order</button>
+                <button class="mt-2 uppercase bg-slate-800 w-60 h-10 rounded-full text-white">More info</button>
+            </div>
+            <div class="text-white absolute bottom-5 w-[100%]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 mx-auto animate-bounce">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5" />
+              </svg>
+              </div>
+            
+            </section>
 </body>
 </html>
