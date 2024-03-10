@@ -3,7 +3,6 @@ import TodoItem from "./components/TodoItem";
 import { useState } from "react";
 
 function App() {
-  const[todos,setTodos] = useState(dummyData);
 
   function setTodoCompleted(id:number,completed:boolean){
       alert(
