@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body{
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        }
+        h1{
+            font-size:5rem;
+            color:grey;
+        }
+        .js-letter{
+            display: inline-block;
+            transition: all 100ms ease-in-out;
+
+        }
+        .scale-rotate-color{
+            color:green;
+            cursor:default;
+            transform: rotate(20deg) scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Goofy headline</h1>
+    <script>
+        
+    const title = document.querySelector("#title");
+    const array= title.innerHTML.split("")
+    let modifiedText=""
+    array.forEach((letter,index) => {
+        if (letter === " "){
+            modifiedText+=letter;
+        }else{
+            array[index] = `<span class="js-letter">${letter}</span>`
+            modifiedText+=array[index];
+        }
+    });
+
+    title.innerHTML=modifiedText;
+
+    const jsLetter = document.querySelectorAll(".js-letter")
+    jsLetter.forEach(node => {
+        node.addEventListener("mouseover",()=>{
+            console.log(node.innerText)
+            node.classList.add("scale-rotate-color")
+        })
+        node.addEventListener("mouseout",()=>{
+            console.log("out")
+            node.classList.remove("scale-rotate-color")
+        })
+        console.log(node)
+
+    });
+    </script>
+</body> 
+</html>

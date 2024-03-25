@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="output.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1 class="text-4xl text-blue-600 font-bold">Calculator</h1>
+    <hr>
+    <div class="">
+        <div class="m-2">
+            <label class="w-1/4 inline-block" for="input-bill">Bill amount ($)</label>
+            <input class="border-2  w-2/4" type="number" name="input-bill" id="input-bill" placeholder="ie 34.99">
+        </div>
+        <div class="m-2">
+            <label class="w-1/4 inline-block" for="input-tip">Tip amount (%)</label>
+            <input class="border-2 w-2/4" type="number" name="input-tip" id="input-tip" placeholder="ie 5">
+        </div>
+        <button class="bg-green-500 p-2 shadow-lg m-2" onclick="calculateBill()">Calculate</button>
+    </div>
+    <p id="total-tip"></p>
+    <p id="total-amount"></p>
+
+
+
+
+    <script src="6script.js"></script>
+    
+</body>
+</html>
