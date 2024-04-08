@@ -9,7 +9,7 @@ const CardBack = ({ CVC }) => {
     return (
         <div className='relative'>
             <img className='w-[300px] md:w-[350px]' src={CARDBACK} alt="cardb" />
-            <p className="absolute text-white top-[72px] md:top-[85px] right-9 text-xs">{CVC}</p>
+            <p className="absolute text-white top-[72px] md:top-[85px] right-9 text-xs">{CVC ?CVC:"123"}</p>
         </div>
     )
 }
@@ -21,9 +21,9 @@ const CardFront = ({ holder, number, dateMonth, dateYear }) => {
             <img className='w-[300px] md:w-[350px]' src={CARDFRONT} alt="cardf" />
             <img src={LOGO} className='absolute top-4 left-4 w-[60px]' alt="" />
 
-            <p className="absolute text-white bottom-14 tracking-[0.2rem] text-xl left-5 font-[500] ">{number}</p>
-            <p className="absolute text-sm text-white bottom-5 left-5">{holder}</p>
-            <p className="absolute text-xs text-white bottom-5 right-5">{dateMonth}/{dateYear}</p>
+            <p className="absolute text-white bottom-14 tracking-[0.2rem] text-xl left-5 font-[500] ">{number ? number:"0000 6969 0420 0021"}</p>
+            <p className="absolute text-xs tracking-wide text-white bottom-5 left-5">{holder? holder.toUpperCase(): "Marek Bis"}</p>
+            <p className="absolute text-xs text-white bottom-5 right-5">{dateMonth ? dateMonth : "05"}/{dateYear ? dateYear:"08"}</p>
         </div>
     )
 }

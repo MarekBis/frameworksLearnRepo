@@ -1,19 +1,24 @@
 import Cards from "./components/Card";
+import Completed from "./components/Completed";
 import Form from "./components/Form";
 import { useState } from "react";
 export default function App() {
+  const [buttonPressed, setButtonPressed] = useState(false);
   const [formData, setFormData] = useState({
-    holder: "Felicia Leire",
-    number: "9535 6473 3224 191E",
-    dateMonth: "MM",
-    dateYear: "YY",
-    CVC: "XXX"
+    holder: "",
+    number: "",
+    dateMonth: "",
+    dateYear: "",
+    CVC: ""
   });
   const handleFormDataChange = (key, value) => {
     setFormData(prevData => ({
       ...prevData,
       [key]: value
     }));
+  }
+  const handleButton = () => {
+    setButtonPressed(!buttonPressed);
   }
   console.log(formData)
 
@@ -25,12 +30,20 @@ export default function App() {
         dateMonth={formData.dateMonth}
         dateYear={formData.dateYear}
         CVC={formData.CVC}
-
       />
-      <Form
-        handleFormDataChange={handleFormDataChange}
-
-      />
+      <div>
+        <div>
+          {
+            !buttonPressed
+              ? <Form
+                handleFormDataChange={handleFormDataChange}
+                handleButton={handleButton}
+                formData={formData}
+              />
+              : <Completed handleButton={handleButton} />
+          }
+        </div>
+      </div>
     </div>
   )
 }
