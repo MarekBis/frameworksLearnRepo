@@ -1,13 +1,25 @@
 
-const Form = ({handleHolderChange,handleNumberChange,holderName}) => {
-    console.log(holderName)
-    const handleHolder = (event) =>{
+const Form = ({ handleFormDataChange }) => {
+    Form.propTypes = null;
+    const handleHolder = (event) => {
         const value = event.target.value;
-        handleHolderChange(value);
+        handleFormDataChange("holder", value);
     }
-    const handleNumber = (event) =>{
+    const handleNumber = (event) => {
         const value = event.target.value;
-        handleNumberChange(value);
+        handleFormDataChange("number", value);
+    }
+    const handleCVC = (event) => {
+        const value = event.target.value;
+        handleFormDataChange("CVC", value);
+    }
+    const handleMonth = (event) => {
+        const value = event.target.value;
+        handleFormDataChange("dateMonth", value);
+    }
+    const handleYear = (event) => {
+        const value = event.target.value;
+        handleFormDataChange("dateYear", value);
     }
 
     return (
@@ -24,13 +36,13 @@ const Form = ({handleHolderChange,handleNumberChange,holderName}) => {
                         <div className="flex flex-col w-1/2">
                             <label className="text-xs pb-[5px]" htmlFor="month">EXP. DATE (MM/YY)</label>
                             <div className="flex gap-2">
-                                <input autoComplete="auto" className="w-[40%] focus:outline-none focus:border-violet-900 border p-2 rounded-md border-gray-300" type="number" name="month" id="month" placeholder="DD" />
-                                <input autoComplete="auto" className=" w-[40%] focus:outline-none focus:border-violet-900 border p-2 rounded-md border-gray-300" type="number" name="year" id="year" placeholder="YY" />
+                                <input autoComplete="auto" onChange={handleMonth} className="w-[40%] focus:outline-none focus:border-violet-900 border p-2 rounded-md border-gray-300" type="number" name="month" id="month" placeholder="MM" />
+                                <input autoComplete="auto" onChange={handleYear} className=" w-[40%] focus:outline-none focus:border-violet-900 border p-2 rounded-md border-gray-300" type="number" name="year" id="year" placeholder="YY" />
                             </div>
                         </div>
                         <div className="flex flex-col w-1/2">
                             <label className="text-xs pb-[5px]" htmlFor="cvc">CVC</label>
-                            <input autoComplete="auto" className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-violet-900" type="number" name="cvc" id="cvc" placeholder="e.g 123" />
+                            <input autoComplete="auto" onChange={handleCVC} className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-violet-900" type="number" name="cvc" id="cvc" placeholder="e.g 123" />
                         </div>
                     </div>
                 </div>
